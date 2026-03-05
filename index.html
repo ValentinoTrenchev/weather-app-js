@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a href="#"
+          ><img src="./src/img/cloudy.svg" alt="cloudy" width="40"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="#statistics">Statistics</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#hourly">Hourly</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search" id="searchForm">
+            <input
+              id="cityInput"
+              class="form-control me-2"
+              type="search"
+              placeholder="Search city..."
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <section class="statistics-section" id="statistics">
+      <div class="statistics-wrapper p-3">
+        <h1 class="text-center mb-4">Weather Statistics</h1>
+        <div class="row justify-content-center">
+          <div class="col-md-4 mb-3">
+            <div class="card">
+              <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">Temperature</h5>
+              </div>
+              <div class="card-body">
+                <p>Highest: <span id="tempHighest">--</span>°C</p>
+                <p>Average: <span id="tempAverage">--</span>°C</p>
+                <p>Lowest: <span id="tempLowest">--</span>°C</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <div class="card">
+              <div class="card-header bg-info text-white">
+                <h5 class="mb-0">Humidity</h5>
+              </div>
+              <div class="card-body">
+                <p>Highest: <span id="humidityHighest">--</span>%</p>
+                <p>Average: <span id="humidityAverage">--</span>%</p>
+                <p>Lowest: <span id="humidityLowest">--</span>%</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <div class="card">
+              <div class="card-header bg-warning">
+                <h5 class="mb-0">Warmest & Coldest</h5>
+              </div>
+              <div class="card-body">
+                <p>Warmest: <span id="warmestTime">--</span></p>
+                <p>Coldest: <span id="coldestTime">--</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="hourly-section d-none" id="hourly">
+      <div class="hourly-wrapper d-flex justify-content-center p-3">
+        <h1 class="p-3">Hourly Page</h1>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Icon</th>
+              <th>Description</th>
+              <th>Date & Time</th>
+              <th>Temperature</th>
+              <th>Humidity</th>
+              <th>Wind Speed</th>
+            </tr>
+          </thead>
+          <tbody id="hourlyTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+    <section class="about-section d-none" id="about">
+      <div class="about-wrapper p-3">
+        <div class="container">
+          <h1 class="text-center mb-4">About</h1>
+
+          <div class="row justify-content-center">
+            <div class="col-md-8 mb-4">
+              <div class="card">
+                <div class="card-header bg-primary text-white">
+                  <h5 class="mb-0">About the App</h5>
+                </div>
+                <div class="card-body">
+                  <p>
+                    Weather App is a simple and intuitive application that
+                    provides real-time weather information for cities around the
+                    world.
+                  </p>
+                  <p>Features include:</p>
+                  <ul>
+                    <li>Current weather statistics (temperature, humidity)</li>
+                    <li>Hourly weather forecasts</li>
+                    <li>Warmest and coldest times prediction</li>
+                    <li>Search for any city worldwide</li>
+                  </ul>
+                  <p>
+                    Data is provided by the
+                    <a href="https://openweathermap.org/" target="_blank"
+                      >OpenWeatherMap API</a
+                    >.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-8 mb-4">
+              <div class="card">
+                <div class="card-header bg-primary text-white">
+                  <h5 class="mb-0">About the Creator</h5>
+                </div>
+                <div class="card-body">
+                  <p>
+                    This app was created by <strong>Valentino Trenchev</strong>,
+                    a passionate web developer with a focus on building
+                    user-friendly applications.
+                  </p>
+                  <p>Built using:</p>
+                  <ul>
+                    <li>HTML5</li>
+                    <li>CSS3 with Bootstrap 5</li>
+                    <li>Vanilla JavaScript (ES6+)</li>
+                    <li>OpenWeatherMap API</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-8 mb-4">
+              <div class="card">
+                <div class="card-header bg-primary text-white">
+                  <h5 class="mb-0">Contact Info</h5>
+                </div>
+                <div class="card-body">
+                  <p>
+                    <strong>Email:</strong>
+                    <a href="mailto:valentino@trencev.com"
+                      >valentino@trencev.com</a
+                    >
+                  </p>
+                  <p>
+                    <strong>GitHub:</strong>
+                    <a
+                      href="https://github.com/ValentinoTrenchev"
+                      target="_blank"
+                      >github.com/ValentinoTrenchev</a
+                    >
+                  </p>
+                  <p>
+                    <strong>LinkedIn:</strong>
+                    <a
+                      href="https://www.linkedin.com/in/valentino-trenchev/"
+                      target="_blank"
+                      >linkedin.com/in/valentino-trenchev</a
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

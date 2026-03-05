@@ -1,0 +1,13 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: url(./img/background1.png);
+}
+
+.hourly-wrapper {
+  flex-direction: column;
+  align-items: center;
+}
