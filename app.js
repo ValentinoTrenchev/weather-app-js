@@ -120,7 +120,7 @@ function renderStatistics(data) {
 }
 
 async function fetchWeatherData(city = 'Skopje') {
-  const apiKey = 'c9817911edb7f278a735046281e1978f';
+  const apiKey = '';
   const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&APPID=${apiKey}`;
   try {
     const response = await fetch(apiUrl);
